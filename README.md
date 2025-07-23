@@ -1,90 +1,114 @@
+# 🚀 AWS EKS Terraform Infrastructure
 
-# Terraform_EKS
-=======
-# AWS EKS Terraform Infrastructure
+<div align="center">
+  <img src="https://d1.awsstatic.com/icons/console/manage/eks.8dd6da65dd3875d11ce13c2cae82140de89c9f78.png" alt="EKS Logo" width="150" height="150">
+  <br>
+  <br>
+  
+  ![AWS EKS](https://img.shields.io/badge/AWS_EKS-Terraform-orange?style=for-the-badge)
+  ![Terraform](https://img.shields.io/badge/Terraform-1.0+-blue?style=for-the-badge)
+  ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+</div>
 
-![AWS EKS](https://img.shields.io/badge/AWS_EKS-Terraform-orange)
-![Terraform](https://img.shields.io/badge/Terraform-1.0+-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
+<p align="center">
+  <i>A production-ready Terraform solution for deploying and managing Amazon EKS clusters with advanced networking, security, and scalability features.</i>
+</p>
 
-A comprehensive Terraform project for deploying and managing production-ready Amazon EKS clusters with advanced networking, security, and autoscaling capabilities.
+---
+
+## 🌟 Features at a Glance
+
+- **🧩 Modular Design** - Reusable components for maximum flexibility
+- **🔒 Security-First Approach** - Following AWS best practices
+- **🌐 Multi-AZ Architecture** - For high availability and resilience
+- **⚖️ Auto-scaling Capabilities** - Adapt to changing workloads
+- **🛠️ Customizable Configuration** - Tailor to your specific needs
+- **📊 Comprehensive Outputs** - For easy integration with other systems
+
+---
 
 ## 📋 Table of Contents
 
-- [Architecture Overview](#architecture-overview)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Module Documentation](#module-documentation)
-- [Workflow](#workflow)
-- [Customization](#customization)
-- [Best Practices](#best-practices)
-- [Contributing](#contributing)
-- [License](#license)
+- [Architecture Overview](#-architecture-overview)
+- [Prerequisites](#-prerequisites)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Module Documentation](#-module-documentation)
+- [Workflow](#-workflow)
+- [Customization](#-customization)
+- [Best Practices](#-best-practices)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
 
 ## 🏗️ Architecture Overview
 
+<div align="center">
+  <img src="https://via.placeholder.com/800x400?text=EKS+Architecture+Diagram" alt="Architecture Diagram" width="800">
+</div>
+
 This project implements a production-grade EKS infrastructure with the following components:
 
-- **VPC & Networking**: Custom VPC with public and private subnets across multiple AZs
-- **EKS Cluster**: Managed Kubernetes control plane with OIDC integration
-- **Node Groups**: Managed worker nodes with customizable instance types and scaling options
-- **IAM**: Least-privilege IAM roles and policies for cluster components
-- **Karpenter**: Advanced autoscaling for optimized resource utilization
-- **Add-ons**: Support for essential EKS add-ons (CoreDNS, kube-proxy, VPC CNI, etc.)
+| Component | Description |
+|-----------|-------------|
+| **VPC & Networking** | Custom VPC with public and private subnets across multiple AZs |
+| **EKS Cluster** | Managed Kubernetes control plane with OIDC integration |
+| **Node Groups** | Managed worker nodes with customizable instance types and scaling options |
+| **IAM** | Least-privilege IAM roles and policies for cluster components |
+| **Add-ons** | Support for essential EKS add-ons (CoreDNS, kube-proxy, VPC CNI, etc.) |
 
-## ✨ Features
-
-- **Modular Design**: Reusable modules for each infrastructure component
-- **Multi-Environment Support**: Configure different environments using Terraform workspaces
-- **Scalability**: Easily scale node groups and clusters based on workload demands
-- **Security**: Follows AWS security best practices with proper IAM permissions
-- **Flexibility**: Extensive configuration options for all components
-- **Maintainability**: Well-structured code with consistent patterns
-- **Observability**: Ready for integration with monitoring and logging solutions
+---
 
 ## 🔧 Prerequisites
 
-- Terraform v1.0+
-- AWS CLI v2.0+ configured with appropriate permissions
-- kubectl (for interacting with the cluster post-deployment)
-- AWS account with permissions to create EKS clusters and related resources
+Before you begin, ensure you have the following tools installed:
+
+- **Terraform** v1.0+ - [Installation Guide](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+- **AWS CLI** v2.0+ - [Installation Guide](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+- **kubectl** - [Installation Guide](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+
+You'll also need:
+- AWS account with appropriate permissions
+- AWS credentials configured locally
+
+---
 
 ## 📁 Project Structure
 
 ```
-terraform_eks/EKS-terraform/
-├── data.tf                 # Data sources for EKS cluster
-├── local.tf                # Local variables for configuration
-├── main.tf                 # Main module instantiation
-├── modules/                # Reusable modules
-│   ├── eks-cluster/        # EKS cluster configuration
-│   ├── iam_role/           # IAM roles and policies
-│   ├── Karpenter/          # Karpenter autoscaling
-│   ├── node_group/         # EKS node groups
-│   └── vpc/                # VPC and networking
-├── output.tf               # Output values
-├── provider.tf             # Provider configuration
-└── variables.tf            # Input variables
+terraform_eks/
+├── 📄 data.tf                 # Data sources for EKS cluster
+├── 📄 main.tf                 # Main module instantiation
+├── 📄 output.tf               # Output values
+├── 📄 provider.tf             # Provider configuration
+├── 📄 variables.tf            # Input variables
+├── 📂 modules/                # Reusable modules
+│   ├── 📂 eks-cluster/        # EKS cluster configuration
+│   ├── 📂 iam_role/           # IAM roles and policies
+│   ├── 📂 node_group/         # EKS node groups
+│   └── 📂 vpc/                # VPC and networking
+└── 📄 README.md               # Project documentation
 ```
+
+---
 
 ## 🚀 Getting Started
 
-### Installation
+### ⚙️ Installation
 
-1. Clone this repository:
+1. **Clone this repository:**
    ```bash
    git clone https://github.com/yourusername/terraform_eks.git
    cd terraform_eks
    ```
 
-2. Initialize Terraform:
+2. **Initialize Terraform:**
    ```bash
    terraform init
    ```
 
-3. Create a `terraform.tfvars` file with your configuration:
+3. **Create a `terraform.tfvars` file with your configuration:**
    ```hcl
    project_name = "my-eks-project"
    
@@ -102,21 +126,19 @@ terraform_eks/EKS-terraform/
        domain = "vpc"
      }
    }
-   
-   # Add other variables as needed
    ```
 
-4. Plan the deployment:
+4. **Plan the deployment:**
    ```bash
    terraform plan -out=tfplan
    ```
 
-5. Apply the configuration:
+5. **Apply the configuration:**
    ```bash
    terraform apply tfplan
    ```
 
-### Accessing the Cluster
+### 🔌 Accessing the Cluster
 
 After deployment, configure kubectl to access your cluster:
 
@@ -125,118 +147,150 @@ aws eks update-kubeconfig --name <cluster-name> --region <region>
 kubectl get nodes
 ```
 
+---
+
 ## 📚 Module Documentation
 
-### VPC Module
+Each module in this project has its own README.md file with detailed documentation:
 
-The VPC module creates a complete networking stack including VPC, subnets, internet gateways, NAT gateways, route tables, and security groups.
+<div align="center">
 
-**Key Features:**
-- Support for multiple VPCs
-- Public and private subnet configuration
-- NAT gateways for private subnet connectivity
-- Security groups with dynamic rules
+| Module | Description |
+|--------|-------------|
+| [EKS Cluster Module](./modules/eks-cluster/README.md) | Provisions and manages EKS clusters |
+| [IAM Role Module](./modules/iam_role/README.md) | Creates IAM roles and policies |
+| [Node Group Module](./modules/node_group/README.md) | Manages EKS node groups |
+| [VPC Module](./modules/vpc/README.md) | Creates networking infrastructure |
 
-### EKS Cluster Module
+</div>
 
-This module provisions the EKS control plane with comprehensive configuration options.
-
-**Key Features:**
-- OIDC provider integration for pod identity
-- Support for multiple clusters
-- Add-on management
-- Advanced networking options
-
-### IAM Role Module
-
-Creates IAM roles and policies with proper permissions for EKS components.
-
-**Key Features:**
-- Custom policy creation
-- AWS managed policy attachment
-- Dynamic policy document generation
-
-### Node Group Module
-
-Manages EKS node groups for worker nodes.
-
-**Key Features:**
-- Multiple node group support
-- Customizable instance types
-- Auto-scaling configuration
-- Taints and labels support
-
-### Karpenter Module
-
-Implements Karpenter for advanced cluster autoscaling.
-
-**Key Features:**
-- Helm chart deployment
-- IAM role configuration
-- Custom provisioner support
+---
 
 ## 🔄 Workflow
 
+<div align="center">
+  <img src="https://via.placeholder.com/800x200?text=Deployment+Workflow" alt="Workflow Diagram" width="800">
+</div>
+
 The infrastructure deployment follows this workflow:
 
-1. **VPC Creation**: Sets up the networking foundation
-2. **IAM Role Creation**: Establishes necessary permissions
-3. **EKS Cluster Deployment**: Creates the Kubernetes control plane
-4. **Node Group Provisioning**: Adds worker nodes to the cluster
-5. **Add-on Installation**: Configures essential cluster add-ons
-6. **Karpenter Setup**: Implements advanced autoscaling
+1. **VPC Creation** → Sets up the networking foundation
+2. **IAM Role Creation** → Establishes necessary permissions
+3. **EKS Cluster Deployment** → Creates the Kubernetes control plane
+4. **Node Group Provisioning** → Adds worker nodes to the cluster
+5. **Add-on Installation** → Configures essential cluster add-ons
+
+---
 
 ## 🛠️ Customization
 
-### Adding New Node Groups
-
-To add a new node group, update the `local.tf` file:
+### 🌐 VPC Configuration
 
 ```hcl
-node_groups = {
+vpcs = {
+  main = {
+    cidr_block           = "10.0.0.0/16"
+    enable_dns_support   = true
+    enable_dns_hostnames = true
+  }
+}
+
+subnets = {
+  public1 = {
+    vpc_id     = module.vpc.vpc_id["main"]
+    cidr_block = "10.0.1.0/24"
+    az         = "us-west-2a"
+    public     = true
+    tags = {
+      "kubernetes.io/role/elb" = "1"
+    }
+  }
+  private1 = {
+    vpc_id     = module.vpc.vpc_id["main"]
+    cidr_block = "10.0.2.0/24"
+    az         = "us-west-2a"
+    public     = false
+    tags = {
+      "kubernetes.io/role/internal-elb" = "1"
+    }
+  }
+}
+```
+
+### ☸️ EKS Cluster Configuration
+
+```hcl
+eks_clusters = {
+  main = {
+    name     = "production-cluster"
+    role_arn = module.iam_role.output_iam_role_arns["eks_cluster_role"]
+    vpc_config = {
+      subnet_ids              = [module.vpc.subnet_ids["private1"], module.vpc.subnet_ids["private2"]]
+      endpoint_private_access = true
+      endpoint_public_access  = true
+      public_access_cidrs     = ["10.0.0.0/8", "172.16.0.0/12"]
+      security_group_ids      = [module.vpc.security_group_id["eks_cluster_sg"]]
+    }
+    version = "1.28"
+  }
+}
+```
+
+### 🖥️ Node Group Configuration
+
+```hcl
+eks_node_groups = {
   standard = {
-    cluster_name  = module.eks-cluster.eks_clusters["test"].name
-    node_role_arn = module.iam_role.output_iam_role_arns["node_group_role"]
+    cluster_name  = module.eks-cluster.eks_clusters["main"].name
+    node_role_arn = module.iam_role.output_iam_role_arns["eks_node_role"]
     subnet_ids    = [module.vpc.subnet_ids["private1"], module.vpc.subnet_ids["private2"]]
+    
     scaling_config = {
       desired_size = 2
       max_size     = 5
       min_size     = 1
     }
+    
     instance_types = ["t3.medium"]
     capacity_type  = "ON_DEMAND"
   }
 }
 ```
 
-### Configuring Karpenter
-
-Update the Karpenter configuration in `local.tf`:
-
-```hcl
-karpenter_configs = {
-  main = {
-    name             = "karpenter-main"
-    namespace        = "karpenter"
-    chart            = "karpenter"
-    repository       = "oci://public.ecr.aws/karpenter"
-    version          = "0.37.0"
-    create_namespace = true
-    values           = ["${file("${path.module}/karpenter-values.yaml")}"]
-  }
-}
-```
+---
 
 ## 🏆 Best Practices
 
-This project follows these Terraform best practices:
+<div align="center">
 
-1. **Modular Design**: Each component is in its own module for reusability
-2. **State Management**: Prepared for remote state with S3 and DynamoDB
-3. **Variable Typing**: Strong typing with validation rules
-4. **Resource Naming**: Consistent naming conventions
-5. **Security**: Least privilege IAM policies
-6. **Documentation**: Comprehensive comments and documentation
+| Category | Best Practices |
+|----------|---------------|
+| **Infrastructure as Code** | Modular design, DRY principle, version control |
+| **Security** | Least privilege IAM, private subnets, restricted API access |
+| **High Availability** | Multi-AZ deployment, redundant NAT gateways |
+| **Cost Optimization** | Spot instances, right sizing, auto-scaling |
+| **Operational Excellence** | Logging, managed add-ons, comprehensive documentation |
+
+</div>
+
+### 🔒 Security Best Practices
+
+- Use private subnets for worker nodes
+- Restrict EKS API server access with `public_access_cidrs`
+- Implement least privilege IAM roles
+- Enable EKS control plane logging
+- Use security groups to restrict network traffic
+- Enable envelope encryption for EKS secrets
+
+### 💰 Cost Optimization
+
+- Use Spot instances for non-critical workloads
+- Implement proper auto-scaling configurations
+- Right-size your node instances
+- Use managed node groups to reduce operational overhead
+- Clean up unused resources
+
+---
 
 ## 🤝 Contributing
 
@@ -248,7 +302,14 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+---
+
+<div align="center">
+  <p>Built with ❤️ for the Kubernetes community</p>
+</div>
