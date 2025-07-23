@@ -1,8 +1,6 @@
 # 🖥️ Node Group Module
 
 <div align="center">
-  <img src="https://d1.awsstatic.com/icons/console/manage/ec2.9c0e0d4c77b1be77a5a2b0b5695ee19a999b2aae.png" alt="EC2 Logo" width="150" height="150">
-  <br>
   <br>
   
   ![AWS EKS](https://img.shields.io/badge/AWS_EKS-Node_Groups-orange?style=for-the-badge)

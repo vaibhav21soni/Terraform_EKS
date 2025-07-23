@@ -1,8 +1,6 @@
 # ☸️ EKS Cluster Module
 
 <div align="center">
-  <img src="https://d1.awsstatic.com/icons/console/manage/eks.8dd6da65dd3875d11ce13c2cae82140de89c9f78.png" alt="EKS Logo" width="150" height="150">
-  <br>
   <br>
   
   ![AWS EKS](https://img.shields.io/badge/AWS_EKS-Module-orange?style=for-the-badge)

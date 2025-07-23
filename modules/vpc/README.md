@@ -1,8 +1,6 @@
 # 🌐 VPC Module
 
 <div align="center">
-  <img src="https://d1.awsstatic.com/icons/console/manage/vpc.9c0e0d4c77b1be77a5a2b0b5695ee19a999b2aae.png" alt="VPC Logo" width="150" height="150">
-  <br>
   <br>
   
   ![AWS VPC](https://img.shields.io/badge/AWS_VPC-Module-orange?style=for-the-badge)

@@ -1,8 +1,6 @@
 # 🔐 IAM Role Module
 
 <div align="center">
-  <img src="https://d1.awsstatic.com/icons/console/manage/iam.9c0e0d4c77b1be77a5a2b0b5695ee19a999b2aae.png" alt="IAM Logo" width="150" height="150">
-  <br>
   <br>
   
   ![AWS IAM](https://img.shields.io/badge/AWS_IAM-Module-orange?style=for-the-badge)

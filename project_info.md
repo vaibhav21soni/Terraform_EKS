@@ -1,8 +1,6 @@
 # 🌟 EKS Terraform Infrastructure - Project Information
 
-<div align="center">
-  <img src="https://d1.awsstatic.com/icons/console/manage/eks.8dd6da65dd3875d11ce13c2cae82140de89c9f78.png" alt="EKS Logo" width="150" height="150">
-</div>
+
 
 ## 🔍 Project Overview
 
@@ -14,9 +12,6 @@ This project provides a comprehensive Terraform solution for deploying and manag
 
 ## 🏗️ Architecture Design
 
-<div align="center">
-  <img src="https://via.placeholder.com/800x400?text=EKS+Architecture+Diagram" alt="Architecture Diagram" width="800">
-</div>
 
 The architecture follows a multi-tier design with clear separation of concerns:
 
@@ -58,9 +53,6 @@ The architecture follows a multi-tier design with clear separation of concerns:
 
 ## 📦 Module Structure
 
-<div align="center">
-  <img src="https://via.placeholder.com/800x200?text=Module+Structure" alt="Module Structure" width="800">
-</div>
 
 The project is organized into reusable modules:
 
@@ -107,9 +99,6 @@ Manages EKS node groups for worker nodes.
 
 ## 🔄 Deployment Workflow
 
-<div align="center">
-  <img src="https://via.placeholder.com/800x200?text=Deployment+Workflow" alt="Deployment Workflow" width="800">
-</div>
 
 The infrastructure deployment follows this workflow:
 
@@ -263,9 +252,6 @@ eks_node_groups = {
 
 ## 🏆 Best Practices Implemented
 
-<div align="center">
-  <img src="https://via.placeholder.com/800x200?text=Best+Practices" alt="Best Practices" width="800">
-</div>
 
 ### 📝 Infrastructure as Code
 
@@ -336,9 +322,6 @@ output "security_group_ids" {
 
 ## 🚀 Future Enhancements
 
-<div align="center">
-  <img src="https://via.placeholder.com/800x200?text=Future+Enhancements" alt="Future Enhancements" width="800">
-</div>
 
 Planned enhancements for this project include:
 
@@ -353,16 +336,12 @@ Planned enhancements for this project include:
 
 ## 🎯 Conclusion
 
-<div align="center">
-  <img src="https://via.placeholder.com/800x200?text=Conclusion" alt="Conclusion" width="800">
-</div>
 
 This Terraform EKS project provides a robust foundation for deploying and managing Kubernetes clusters on AWS. Its modular design, comprehensive configuration options, and adherence to best practices make it suitable for production environments of various sizes and requirements.
 
 > *"Kubernetes made simple with Terraform"*
 
 ---
-
 <div align="center">
   <p>Built with ❤️ for the Kubernetes community</p>
 </div>
