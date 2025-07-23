@@ -1,7 +1,6 @@
 # 🚀 AWS EKS Terraform Infrastructure
 
 <div align="center">
-  <img src="https://d1.awsstatic.com/icons/console/manage/eks.8dd6da65dd3875d11ce13c2cae82140de89c9f78.png" alt="EKS Logo" width="150" height="150">
   <br>
   <br>
   
@@ -44,9 +43,6 @@
 
 ## 🏗️ Architecture Overview
 
-<div align="center">
-  <img src="https://via.placeholder.com/800x400?text=EKS+Architecture+Diagram" alt="Architecture Diagram" width="800">
-</div>
 
 This project implements a production-grade EKS infrastructure with the following components:
 
@@ -99,7 +95,7 @@ terraform_eks/
 
 1. **Clone this repository:**
    ```bash
-   git clone https://github.com/yourusername/terraform_eks.git
+   git clone https://github.com/vaibhav21soni/terraform_eks.git
    cd terraform_eks
    ```
 
@@ -168,9 +164,6 @@ Each module in this project has its own README.md file with detailed documentati
 
 ## 🔄 Workflow
 
-<div align="center">
-  <img src="https://via.placeholder.com/800x200?text=Deployment+Workflow" alt="Workflow Diagram" width="800">
-</div>
 
 The infrastructure deployment follows this workflow:
 
@@ -310,6 +303,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-<div align="center">
-  <p>Built with ❤️ for the Kubernetes community</p>
-</div>
+
