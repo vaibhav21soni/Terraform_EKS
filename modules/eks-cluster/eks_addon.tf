@@ -22,9 +22,9 @@ resource "aws_eks_addon" "eks_addons" {
 
   tags = merge(
     {
-      Name    = "${aws_eks_cluster.clusters[each.key].name}-${each.key}"
+      Name    = "${each.value.cluster_name}-${each.key}"
       Addon   = each.key
-      Cluster = aws_eks_cluster.clusters[each.key].name
+      Cluster = each.value.cluster_name
     },
     each.value.tags
   )
