@@ -35,7 +35,7 @@ resource "aws_iam_policy" "iam_policy" {
 
   name        = each.key
   description = lookup(each.value, "description", "Policy created by Terraform")
-  policy      = data.aws_iam_policy_document.IAM_policy_document[each.key].json
+  policy      = data.aws_iam_policy_document.iam_policy_document[each.key].json
 
   tags = merge(
     {

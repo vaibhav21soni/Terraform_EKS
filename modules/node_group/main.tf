@@ -22,10 +22,10 @@ resource "aws_eks_node_group" "node_pools" {
   tags                   = lookup(each.value, "tags", null)
 
   dynamic "taint" {
-    for_each = lookup(each.value, "taint", [])
+    for_each = each.value.taint != null ? each.value.taint : []
     content {
       key    = taint.value.key
-      value  = lookup(taint.value, "value", null)
+      value  = taint.value.value
       effect = taint.value.effect
     }
   }
